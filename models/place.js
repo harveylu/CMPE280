@@ -11,6 +11,10 @@ var Place = mongoose.model('Place', {
     images: [{
         type: String
     }],
+    scenes: [{
+        name: String,
+        url: String
+    }],
     review: [
         {
             id: String,

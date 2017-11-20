@@ -11,11 +11,14 @@ html(lang='en')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
         // jQuery ui CSS
         link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
         script(src='https://use.fontawesome.com/f9b22d3044.js')
+
         // Custom CSS
         link(href='stylesheets/style-display.css', rel='stylesheet')
+
         // Autocomplete funciton
     body
         nav.navbar.navbar-toggleable-md.navbar-light.fixed-top.bg-faded
@@ -44,8 +47,41 @@ html(lang='en')
         .container-fluid
             .row
                 h2 #{items.name}
-            .row(height='250px')
+            .row
                 .col-6
+                    #accordion(role='tablist', aria-multiselectable='true')
+                        .card
+                            #headingOne.card-header(role='tab')
+                                h5.mb-0
+                                    a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                                        |   Description
+                            #collapseOne.collapse.show(role='tabpanel', aria-labelledby='headingOne')
+                                .card-block
+                                    |   #{items.description}
+                        .card
+                            #headingTwo.card-header(role='tab')
+                                h5.mb-0
+                                    a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                                        |   Contact
+                            #collapseTwo.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                                .card-block
+                                    i.fa.fa-external-link(aria-hidden='true')
+                                    a(href='#{items.website}') Website
+                                    br
+                                    i.fa.fa-phone(aria-hidden='true')
+                                    |   +1 #{items.info[1]}
+                        .card
+                            #headingThree.card-header(role='tab')
+                                h5.mb-0
+                                    a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                                        |   Things to do
+                            #collapseThree.collapse(role='tabpanel', aria-labelledby='headingThree')
+                                .card-block
+                                    for scene in items.scenes
+                                        i.fa.fa-external-link(aria-hidden='true')
+                                        a(href='#{scene.url}') #{scene.name}
+                                        br
+                //
                     h4 Description
                     br
                     p
@@ -83,46 +119,32 @@ html(lang='en')
                         }
                     // script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD24HTaCZNl759ZbQduQKfitIi2hOCAULw&callback=initMap', async='', defer='')
         hr
-        .container-fluid
-            .row
-                .insert.col-4
-                    h3 Insert Review
-                    form(action='/insert', method='post')
-                        .form-group.input
-                            label(for='exampleInputName1') Name
-                            input#exampleInputName1.form-control(type='text', name='name')
-                        .form-group.input
-                            label(for='formControlContent1') Content
-                            textarea#formControlContent1.form-control(rows='3', name='content')
-                        button(type='submit') INSERT
-                .update.col-4
-                    h3 Update Review
-                    form(action='/update', method='post')
-                        .input.form-group
-                            label(for='exampleInputId1') ID
-                            input#exampleInputId1.form-control(type='text', name='id')
-                        .input.form-group
-                            label(for='exampleInputName') Name
-                            input#exampleInputName.form-control(type='text', name='name')
-                        .input.form-group
-                            label(for='formControlContent') Content
-                            textarea#formControlContent.form-control(rows='3', name='content')
-                        button(type='submit') UPDATE
-                .delete.col-4
-                    h3 Delete Review
-                    form(action='/delete', method='post' enctype="application/x-www-form-urlencoded")
-                        .input.form-group
-                            label(for='exampleInputId') ID
-                            input#exampleInputId.form-control(type='text', name='id')
-                        button(type='submit') DELETE
-            hr
-            .row
-                .col-12.get
-                    h3 Reviews
+
+        .row.justify-content-center
+            .col-md-8
+                h2.my-4.text-center Gallery
+                .row
+                    for image in items.images
+                        a.col-sm-4(href='#{image}', data-toggle='lightbox', data-gallery='#gallery')
+                            img.img-fluid(src='#{image}')
 
 
-            .row
-                img.img-fluid(src='#{items.images[0]}' alt='images')
+                    // modal test code
+                        #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='gallery', aria-hidden='true')
+                            .modal-dialog(role='document')
+                                .modal-content
+                                    img.img-fluid(src='#{image}')
+
+
+
+            // img.img-fluid(src='#{items.images[0]}' alt='images')
+
+        hr
+
+
+
+
+
         // Bootstrap JavaScript
         script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
         script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
