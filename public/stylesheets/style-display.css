@@ -76,14 +76,26 @@ body {
     padding-left:10px;
 }
 
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
 .row {
     margin: 20px 0px;
     overflow: hidden;
 }
-[class*="col-"] {
+
+/* [class*="col-"] {
     margin-bottom: -99999px;
     padding-bottom: 99999px;
 }
+
+.col-6 {
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+} */
 
 #map {
     width: 100%;
@@ -101,3 +113,19 @@ body {
   border: 1px solid black;
 
 }
+
+/* modal test code
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.fade-scale.in {
+    opacity: 1;
+    transform: scale(1);
+} */
+
+

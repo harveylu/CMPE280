@@ -6,48 +6,181 @@ var Place = require('../models/place');
 router.get('/seattle', function(req, res, next) {
 
     Place.findOne({'name': 'Seattle'}, function(err, doc){
-        res.render('cities', {items: doc, user:req.user});
+        res.render('cities_test', {items: doc, user:req.user});
     });
 });
 
-router.get('/sanfrancisco', function(req, res, next) {
+router.get('/san-diego', function(req, res, next) {
 
-    Place.find({}, function(err, doc){
-        res.render('cities', {items: doc, user:req.user});
+    Place.findOne({'name': 'San Diego'}, function(err, doc){
+        res.render('cities_test', {items: doc, user:req.user});
     });
 });
 
-/* router.post('/insert', function(req, res, next) {
-    var item = {
-        name: req.body.name,
-        content: req.body.content
-    };
+router.get('/san-francisco', function(req, res, next) {
 
-    var data = new UserReview(item);
-    data.save();
-
-    res.redirect('/display');
-});
-
-router.post('/update', function(req, res, next) {
-    var id = req.body.id;
-
-    UserReview.findById(id, function(err, doc) {
-        if (err) {
-            console.error('error, no entry found');
-        }
-        doc.name = req.body.name;
-        doc.content = req.body.content;
-        doc.save();
+    Place.findOne({'name': 'San Francisco'}, function(err, doc){
+        res.render('cities_test', {items: doc, user:req.user});
     });
-    res.redirect('/display');
 });
 
-router.post('/delete', function(req, res, next) {
-    //console.log(JSON.stringify(req));
-    var id = req.body.id;
-    UserReview.findByIdAndRemove(id).exec();
-    res.redirect('/display');
-}); */
+router.get('/los-angeles', function(req, res, next) {
+
+    Place.findOne({'name': 'Los Angeles'}, function(err, doc){
+        res.render('cities_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/golden-gate-bridge', function(req, res, next) {
+
+    Place.findOne({'name': 'Golden Gate Bridge'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/alcatraz', function(req, res, next) {
+
+    Place.findOne({'name': 'Alcatraz'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/lake-tahoe', function(req, res, next) {
+
+    Place.findOne({'name': 'Lake Tahoe'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/yosemite-national-park', function(req, res, next) {
+
+    Place.findOne({'name': 'Yosemite National Park'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/napa-valley', function(req, res, next) {
+
+    Place.findOne({'name': 'Napa Valley'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/mendocino-coast', function(req, res, next) {
+
+    Place.findOne({'name': 'Mendocino Coast'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/uss-midway-museum', function(req, res, next) {
+
+    Place.findOne({'name': 'USS Midway Museum'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+
+router.get('/la-jolla-cove', function(req, res, next) {
+
+    Place.findOne({'name': 'La Jolla Cove'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/universal-studios-hollywood', function(req, res, next) {
+
+    Place.findOne({'name': 'Universal Studios Hollywood'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/disneyland-park', function(req, res, next) {
+
+    Place.findOne({'name': 'Disneyland Park'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/griffith-observatory', function(req, res, next) {
+
+    Place.findOne({'name': 'Griffith Observatory'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/six-flags-magic-mountain', function(req, res, next) {
+
+    Place.findOne({'name': 'Six Flags Magic Mountain'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/chihuly-garden-and-glass', function(req, res, next) {
+
+    Place.findOne({'name': 'Chihuly Garden and Glass'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/pike-place-market', function(req, res, next) {
+
+    Place.findOne({'name': 'Pike Place Market'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/space-needle', function(req, res, next) {
+
+    Place.findOne({'name': 'Space Needle'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/washington-state-ferries', function(req, res, next) {
+
+    Place.findOne({'name': 'Washington State Ferries'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/san-diego-zoo', function(req, res, next) {
+
+    Place.findOne({'name': 'San Diego Zoo'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/balboa-park', function(req, res, next) {
+
+    Place.findOne({'name': 'Balboa Park'}, function(err, doc){
+        res.render('places_test', {items: doc, user:req.user});
+    });
+});
+
+router.get('/test', function(req, res, next) {
+
+    Place.findOne({'name': 'Balboa Park'}, function(err, doc){
+        res.render('search', {items: doc, user:req.user});
+    });
+});
+
+router.post('/addReview', function (req, res, next) {
+
+    Place.findOne({}, function(err, doc) {
+
+        var updated = doc;
+        var newReview = {
+            content: req.body.content,
+            userName: req.user.userName
+        };
+        updated.reviews.push(newReview);
+        updated.save();
+
+        res.render('place', {items: updated, user:req.user});
+
+    });
+
+});
 
 module.exports = router;

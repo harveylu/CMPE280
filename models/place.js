@@ -11,10 +11,13 @@ var Place = mongoose.model('Place', {
     images: [{
         type: String
     }],
-    review: [
+    scenes: [{
+        name: String,
+        url: String
+    }],
+    reviews: [
         {
-            id: String,
-            userId: String,
+            userName: String,
             content: String,
             createDate: {type: Date, default: Date.now()},
             updateDate: {type: Date, default: Date.now()}
