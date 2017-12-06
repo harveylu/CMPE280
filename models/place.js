@@ -7,7 +7,7 @@ var Place = mongoose.model('Place', {
     info: [{
         type: String
     }],
-    website: String,
+    website: [String],
     description: String,
     images: [{
         type: String

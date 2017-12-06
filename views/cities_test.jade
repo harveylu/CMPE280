@@ -60,28 +60,33 @@ html(lang='en')
                     i.fa.fa-cutlery.fa-3x(aria-hidden='true')
                 h4
                   strong Restaurant
-                p.text-faded.mb-0 Looking for great local food!
+                a(href='#{items.website[0]}')
+                    p.text-faded.mb-0 Looking for great local food!
               .col-lg-3.col-md-6.mb-5.mb-lg-0
                 span.service-icon.rounded-circle.mx-auto.mb-3
                     i.fa.fa-taxi.fa-3x(aria-hidden='true')
                 h4
                   strong Transportation
-                p.text-faded.mb-0 Get around in the city
+                a(href='#{items.website[1]}')
+                    p.text-faded.mb-0 Get around in the city
               .col-lg-3.col-md-6.mb-5.mb-md-0
                 span.service-icon.rounded-circle.mx-auto.mb-3
                     i.fa.fa-university.fa-3x(aria-hidden='true')
                 h4
                   strong Government
-                p.text-faded.mb-0
-                  | We&nbsp;
-                  i.fa.fa-heart
-                  | &nbsp;to help
+                a(href='#{items.website[2]}')
+                    p.text-faded.mb-0
+                    | We&nbsp;
+                    i.fa.fa-heart
+                    | &nbsp;to help
               .col-lg-3.col-md-6
                 span.service-icon.rounded-circle.mx-auto.mb-3
                     i.fa.fa-thermometer-empty.fa-3x(aria-hidden='true')
                 h4
                   strong Weather
-                p.text-faded.mb-0 Stay with comfort
+                a(href='#{items.website[3]}')
+                    p.text-faded.mb-0 Stay with comfort
+
 
         // Portfolio
         section#portfolio.content-section
@@ -125,7 +130,7 @@ html(lang='en')
             .container.text-center
                 h2.mb-4 Contact
                 i.fa.fa-external-link(aria-hidden='true')
-                a(href='#{items.website}') &nbsp;Official Website
+                a(href='#{items.website[2]}') &nbsp;Official Website
                 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 i.fa.fa-phone(aria-hidden='true')
                 |   &nbsp;+1 #{items.info[1]}
