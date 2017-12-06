@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Place = require('../models/place');
+var ObjectId = require('mongodb').ObjectId;
 
 
 router.get('/seattle', function(req, res, next) {
@@ -151,6 +152,7 @@ router.get('/san-diego-zoo', function(req, res, next) {
     });
 });
 
+
 router.get('/balboa-park', function(req, res, next) {
 
     Place.findOne({'name': 'Balboa Park'}, function(err, doc){
@@ -166,18 +168,19 @@ router.get('/test', function(req, res, next) {
 });
 
 router.post('/addReview', function (req, res, next) {
+    console.log(req.body);
 
-    Place.findOne({}, function(err, doc) {
+    Place.findOne({ "name": req.body.place }, function(err, doc) {
 
         var updated = doc;
         var newReview = {
             content: req.body.content,
-            userName: req.user.userName
+            userName: req.user.username,
         };
         updated.reviews.push(newReview);
         updated.save();
 
-        res.render('place', {items: updated, user:req.user});
+        res.render('places_test', {items: updated, user:req.user});
 
     });
 

@@ -16,6 +16,10 @@ router.get('/bucketlist', function(req, res, next) {
 
 });
 
+router.get('/contact', function(req,res){
+   res.render('contact', {user: req.user});
+});
+
 router.get('/places', function(req, res, next) {
 
 

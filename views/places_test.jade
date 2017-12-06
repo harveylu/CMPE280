@@ -41,7 +41,7 @@ html(lang='en')
                     li.nav-item
                         a.nav-link(href='#') About
                     li.nav-item
-                        a.nav-link(href='#') Contact
+                        a.nav-link(href='/contact') Contact
                 form.form-inline.mt-2.mt-md-0
                     .ui-widget
                         input#tags.form-control.mr-sm-2(type='text', placeholder='Search')
@@ -101,16 +101,23 @@ html(lang='en')
 
         .row.justify-content-center
             .col-md-8.comments
-                .comment-wrap
-                    .photo
-                        .avatar(style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')")
-                    .comment-block
-                        form(action='/addReview' method='post')
-                            textarea(name='content', id='textarea1' cols='30', rows='3', placeholder='Add comment...')
-                            button.btn.icon-btn.btn-primary(type='submit')
-                                i.fa.fa-share-square-o(aria-hidden='true')
-                                span.img-circle.text-info
-                                | Share
+
+
+                if user
+                    .comment-wrap
+                        .photo
+                            .avatar(style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')")
+                        .comment-block
+                            form(action='/addReview' method='post')
+                                input(name='place', value='#{items.name}', type='hidden')
+                                textarea(name='content', id='textarea1' cols='30', rows='3', placeholder='Add comment...')
+                                button.btn.icon-btn.btn-primary(type='submit')
+                                    i.fa.fa-share-square-o(aria-hidden='true')
+                                    span.img-circle.text-info
+                                    | Share
+
+                else
+
                 .float-right
 
                 for review in items.reviews
@@ -120,7 +127,7 @@ html(lang='en')
                         .comment-block
                             p.comment-text #{review.content}
                             .bottom-comment
-                                .comment-date #{review.updateDate}
+                                .comment-date #{review.createDate}
 
         hr
 
