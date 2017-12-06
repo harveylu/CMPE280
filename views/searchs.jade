@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Title
+    body
+        form(action='/search', method='get')
+            | A search place:
+            br
+            input(type='text', name='searchKey', placeholder='San Jose')
+            br
+            br
+            input(type='submit', value='Submit')

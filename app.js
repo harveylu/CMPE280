@@ -13,6 +13,7 @@ mongoose.connect(dbConfig.url);
 var reviews = require('./routes/reviews');
 var routes = require('./routes/index');
 var places = require('./routes/places');
+var searchs = require('./routes/search');
 var app = express();
 
 // view engine setup
@@ -50,6 +51,7 @@ app.use('/', routes);
 app.use('/', reviews);
 app.use('/', users);
 app.use('/', places);
+app.use('/', searchs);
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

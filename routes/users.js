@@ -9,7 +9,7 @@ var isAuthenticated = function (req, res, next) {
         return next();
     // if the user is not authenticated then redirect him to the login page
     return next();
-}
+};
 
 
 module.exports = function(passport){
