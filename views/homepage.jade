@@ -45,11 +45,8 @@ html(lang='en')
                     source: availableTags
                 });
             } );
-            $( function() {
-                $( "#datepicker" ).datepicker({
-                    minDate : 0
-                });
-            } );
+
+
     body
         nav.navbar.navbar-toggleable-md.navbar-light.fixed-top.bg-faded
             button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
@@ -63,12 +60,9 @@ html(lang='en')
                     li.nav-item
                         a.nav-link(href='about') About
                     li.nav-item
-                        a.nav-link(href='#') Contact
-                    li.nav-item
-                        a.nav-link.disabled(href='maps') Map
-                    li.nav-item
+                        a.nav-link(href='/contact') Contact
 
-                        a.nav-link.disabled(href='bucketlist') BucketList
+
                 form.form-inline.mt-2.mt-md-0(action='/search', method='post')
 
                     .ui-widget

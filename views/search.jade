@@ -14,6 +14,34 @@ html(lang='en')
 
         // Custom CSS
         link(href='stylesheets/test.css', rel='stylesheet')
+
+        script.
+            $(function () {
+                var availableTags = [
+                    "San Diego",
+                    "Los Angeles",
+                    "San Francisco",
+                    "Seattle",
+                    "Golden Gate Bridge",
+                    "Lake Tahoe",
+                    "Yosemite National Park",
+                    "Napa Valley",
+                    "Alcatraz",
+                    "Mendocino Coast",
+                    "Universal Studios Hollywood",
+                    "Griffith Observatory",
+                    "Disneyland Park",
+                    "Six Flags Magic Mountain",
+                    "Pike Place Market",
+                    "Chihuly Garden and Glass",
+                    "Space Needle",
+                    "Washington State Ferries"
+                ];
+                $("#tags").autocomplete({
+                    source: availableTags
+                });
+            });
+
     body#page-top
 
         .container
@@ -26,11 +54,12 @@ html(lang='en')
 
 
                     hr
-                    .input-group
-                        input.form-control(type='text', value='', name='', placeholder='Search......')
-                        span.input-group-btn
-                            button.btn.btn-primary(type='button')
-                                i.fa.fa-search
+                    form(action='/search', method='post')
+                        .input-group
+                            input.form-control(type='text', name='key', placeholder='Search...')
+                            span.input-group-btn
+                                button.btn.btn-primary(type='submit')
+                                    i.fa.fa-search
                     p.lead
                         strong.text-danger #{results.length}
                         |  results were found for the search
@@ -47,7 +76,7 @@ html(lang='en')
                         section.col-xs-12.col-sm-6.col-md-12
                             article.search-result.row
                                 .col-xs-12.col-sm-12.col-md-3
-                                    a.thumbnail(href='#', title='#{item.name}')
+                                    a.thumbnail(href='#{item.url}', title='#{item.name}')
                                         img(src='#{item.images[0]}', alt='#{item.name}', height="150" width="240")
                                 .col-xs-12.col-sm-12.col-md-1
                                     //ul.meta-search
@@ -64,7 +93,16 @@ html(lang='en')
                                     h3
                                         a(href='#{item.url}', title='') #{item.name}
                                     p
-                                        | #{item.description.slice(0, 300)}...
+                                        | #{item.description.slice(0, 200)}...
 
 
                                 span.clearfix.borda
+
+
+
+    // Bootstrap JavaScript
+    script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
+    script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js', integrity='sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb', crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js', integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn', crossorigin='anonymous')

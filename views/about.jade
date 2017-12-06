@@ -64,24 +64,9 @@ html(lang='en')
                     li.nav-item
                         a.nav-link(href='about') About
                     li.nav-item
-                        a.nav-link(href='#') Contact
-                    li.nav-item
-                        a.nav-link.disabled(href='maps') Map
-                    li.nav-item
+                        a.nav-link(href='contact') Contact
 
-                        a.nav-link.disabled(href='bucketlist') BucketList
-                form.form-inline.mt-2.mt-md-0(action='/search', method='post')
 
-                    .ui-widget
-                        input#tags.form-control.mr-sm-2(type='text',name='key' ,placeholder='Search')
-                        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-
-                ul.navbar-nav.justify-content-end
-                    li.nav-item
-                    if user
-                        a.nav-link(href='/home') Hello, #{user.firstName}!
-                    else
-                        a.nav-link(href='/login') Join Us
 
         header.masthead.d-flex
             .container.text-center.my-auto
