@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var Place = require('../models/place');
 
+router.get('/about', function(req, res, next) {
+
+
+        res.render('about',{});
+
+});
 
 router.get('/seattle', function(req, res, next) {
 

@@ -21,7 +21,8 @@ html(lang='en')
                 .col-10
                     h2
                         i.fa.fa-file-o
-                        |  Result
+                        |  Search Results
+
 
 
                     hr
@@ -30,10 +31,40 @@ html(lang='en')
                         span.input-group-btn
                             button.btn.btn-primary(type='button')
                                 i.fa.fa-search
+                    p.lead
+                        strong.text-danger #{results.length}
+                        |  results were found for the search
+                        strong.text-danger &nbsp #{keyWord}
 
-
-                    p show all the result matching
 
                     hr
 
-                    
+
+
+                    hgroup.mb20
+
+                    each item in results
+                        section.col-xs-12.col-sm-6.col-md-12
+                            article.search-result.row
+                                .col-xs-12.col-sm-12.col-md-3
+                                    a.thumbnail(href='#', title='#{item.name}')
+                                        img(src='#{item.images[0]}', alt='#{item.name}', height="150" width="240")
+                                .col-xs-12.col-sm-12.col-md-1
+                                    //ul.meta-search
+                                        li
+                                            i.glyphicon.glyphicon-calendar
+                                            span #{item.info[0]}
+                                        li
+                                            i.glyphicon.glyphicon-time
+                                            span #{item.info[1]}
+                                        li
+                                            i.glyphicon.glyphicon-tags
+                                            span #{item.info[0]}
+                                .col-xs-12.col-sm-12.col-md-8.excerpet
+                                    h3
+                                        a(href='#{item.url}', title='') #{item.name}
+                                    p
+                                        | #{item.description.slice(0, 300)}...
+
+
+                                span.clearfix.borda

@@ -59,7 +59,6 @@ typings/
 
 # Vim un file
 *.un~
-
 .idea
 
 public/images/alert/

@@ -39,7 +39,7 @@ html(lang='en')
                     li.nav-item.active
                         a.nav-link(href='/') Home
                     li.nav-item
-                        a.nav-link(href='#') About
+                        a.nav-link(href='about') About
                     li.nav-item
                         a.nav-link(href='#') Contact
                 form.form-inline.mt-2.mt-md-0
@@ -106,7 +106,7 @@ html(lang='en')
                         .avatar(style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg')")
                     .comment-block
                         form(action='/addReview' method='post')
-                            textarea(name='content', id='textarea1' cols='30', rows='3', placeholder='Add comment...')
+                            textarea(name='content', id='textarea1' cols='30', rows='3', placeholder='Add comment...' + '#{items.name}')
                             button.btn.icon-btn.btn-primary(type='submit')
                                 i.fa.fa-share-square-o(aria-hidden='true')
                                 span.img-circle.text-info
@@ -120,7 +120,7 @@ html(lang='en')
                         .comment-block
                             p.comment-text #{review.content}
                             .bottom-comment
-                                .comment-date #{review.updateDate}
+                                .comment-date #{review.createDate}
 
         hr
 

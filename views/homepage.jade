@@ -61,7 +61,7 @@ html(lang='en')
                     li.nav-item.active
                         a.nav-link(href='/') Home
                     li.nav-item
-                        a.nav-link(href='#') About
+                        a.nav-link(href='about') About
                     li.nav-item
                         a.nav-link(href='#') Contact
                     li.nav-item
@@ -81,6 +81,7 @@ html(lang='en')
                         a.nav-link(href='/home') Hello, #{user.firstName}!
                     else
                         a.nav-link(href='/login') Join Us
+
         #myCarousel.carousel.slide(data-ride='carousel')
             ol.carousel-indicators
                 li.active(data-target='#myCarousel', data-slide-to='0')

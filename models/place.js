@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 
 var Place = mongoose.model('Place', {
     name: String,
+    url: String,
     keywords: ["San", "Francisco", "S", "Sa"],
     info: [{
         type: String

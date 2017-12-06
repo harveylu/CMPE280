@@ -12,7 +12,7 @@ router.post('/search', function(req, res) {
         console.log(regex);
         console.log(doc);
         console.log('Got through');
-        res.render('results', {results: doc, keyWord: keyWord});
+        res.render('search', {results: doc, keyWord: keyWord});
     });
 });
 
