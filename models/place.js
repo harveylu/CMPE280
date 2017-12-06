@@ -15,10 +15,9 @@ var Place = mongoose.model('Place', {
         name: String,
         url: String
     }],
-    review: [
+    reviews: [
         {
-            id: String,
-            userId: String,
+            userName: String,
             content: String,
             createDate: {type: Date, default: Date.now()},
             updateDate: {type: Date, default: Date.now()}

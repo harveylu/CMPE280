@@ -7,6 +7,9 @@ html(lang='en')
         meta(name='author', content='')
         link(rel='icon', href='../../favicon.ico')
         title Tour Guide for Spartans
+
+        // Custom Fonts
+        script(src='https://use.fontawesome.com/f9b22d3044.js')
         // Bootstrap core CSS
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
         // jQuery ui CSS
@@ -14,7 +17,7 @@ html(lang='en')
         script(src='https://code.jquery.com/jquery-1.12.4.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
         // Custom CSS
-        link(href='css/homepage.css', rel='stylesheet')
+        link(href='stylesheets/homepage.css', rel='stylesheet')
         // Autocomplete funciton
         script.
             $( function() {
@@ -23,8 +26,20 @@ html(lang='en')
                     "Los Angeles",
                     "San Francisco",
                     "Seattle",
-                    "San Jose",
-                    "Santa Barbara"
+                    "Golden Gate Bridge",
+                    "Lake Tahoe",
+                    "Yosemite National Park",
+                    "Napa Valley",
+                    "Alcatraz",
+                    "Mendocino Coast",
+                    "Universal Studios Hollywood",
+                    "Griffith Observatory",
+                    "Disneyland Park",
+                    "Six Flags Magic Mountain",
+                    "Pike Place Market",
+                    "Chihuly Garden and Glass",
+                    "Space Needle",
+                    "Washington State Ferries"
                 ];
                 $( "#tags" ).autocomplete({
                     source: availableTags
@@ -40,7 +55,7 @@ html(lang='en')
             button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             a.navbar-brand(href='/')
-                img.img-fluid(src='image/qIXtA.png', height='30px', width='30px')
+                img.img-fluid(src='images/qIXtA.png', height='30px', width='30px')
             #navbarCollapse.collapse.navbar-collapse
                 ul.navbar-nav.mr-auto
                     li.nav-item.active
@@ -50,18 +65,14 @@ html(lang='en')
                     li.nav-item
                         a.nav-link(href='#') Contact
                     li.nav-item
-                        a.nav-link(href='maps') Map
+                        a.nav-link.disabled(href='maps') Map
                     li.nav-item
-                        a.nav-link(href='bucketlist') BucketList
+                        a.nav-link.disabled(href='bucketlist') BucketList
                 form.form-inline.mt-2.mt-md-0
                     .ui-widget
                         input#tags.form-control.mr-sm-2(type='text', placeholder='Search')
                         button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
-                //
-                  <form class="form-inline mt-2 mt-md-0 ui-widget">
-                  <input class="form-control mr-sm-2" id="tags" type="text" placeholder="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
+
                 ul.navbar-nav.justify-content-end
                     li.nav-item
                     if user
@@ -75,7 +86,7 @@ html(lang='en')
                 li(data-target='#myCarousel', data-slide-to='2')
             .carousel-inner(role='listbox')
                 .carousel-item.active
-                    img.first-slide(src='image/homeslide1.jpg', alt='First slide')
+                    img.first-slide(src='images/homeslide1.jpg', alt='First slide')
                     .container
                         .carousel-caption.d-none.d-md-block.text-left
                             h1 Golden Gate Bridge
@@ -84,9 +95,9 @@ html(lang='en')
                                 | the one-mile-wide (1.6 km) strait connecting San Francisco Bay and
                                 | the Pacific Ocean.
                             p
-                                a.btn.btn-lg.btn-primary(href='/display', role='button') Details
+                                a.btn.btn-lg.btn-primary(href='/golden-gate-bridge', role='button') Details
                 .carousel-item
-                    img.second-slide(src='image/homeslide2.jpg', alt='Second slide')
+                    img.second-slide(src='images/homeslide2.jpg', alt='Second slide')
                     .container
                         .carousel-caption.d-none.d-md-block
                             h1 Space Needle
@@ -96,7 +107,7 @@ html(lang='en')
                             p
                                 a.btn.btn-lg.btn-primary(href='/seattle', role='button') Explore Seattle
                 .carousel-item
-                    img.third-slide(src='image/homeslide4.jpg', alt='Third slide')
+                    img.third-slide(src='images/homeslide4.jpg', alt='Third slide')
                     .container
                         .carousel-caption.d-none.d-md-block.text-right
                             h1 Sunset in San Diego
@@ -105,18 +116,19 @@ html(lang='en')
                             p
                                 i by Mattie Stepanek
                             p
-                                a.btn.btn-lg.btn-primary(href='places', role='button') Plan your tour
+                                a.btn.btn-lg.btn-primary(href='/san-diego', role='button') Plan your tour
             a.carousel-control-prev(href='#myCarousel', role='button', data-slide='prev')
                 span.carousel-control-prev-icon(aria-hidden='true')
                 span.sr-only Previous
             a.carousel-control-next(href='#myCarousel', role='button', data-slide='next')
                 span.carousel-control-next-icon(aria-hidden='true')
                 span.sr-only Next
+
         // Card component
-        .row
-            .col-sm-4
+        .row.align-self-center.justify-content-center
+            .col-sm-3
                 .card
-                    img.card-img-top(src='image/disney-logo.jpg', alt='Card image cap', width='100%', height='200')
+                    img.card-img-top(src='images/disney-logo.jpg', alt='Card image cap', width='100%', height='200')
                     .card-block
                         h4.card-title Disneyland
                         p.card-text
@@ -125,10 +137,10 @@ html(lang='en')
                             | to the ideals, the dreams, and the hard facts that have created America, with the hope that it will be
                             | a source of joy and inspiration to all the world.
                         p.card-text — Walter E. Disney, July 17, 1955
-                        a.btn.btn-primary(href='#') Details
-            .col-sm-4
+                        a.btn.btn-primary(href='/disneyland-park') Details
+            .col-sm-3
                 .card
-                    img.card-img-top(src='image/griffith-logo.jpg', alt='Card image cap', width='100%', height='200')
+                    img.card-img-top(src='images/griffith-logo.jpg', alt='Card image cap', width='100%', height='200')
                     .card-block
                         h4.card-title Griffith Observatory
                         p.card-text
@@ -136,10 +148,10 @@ html(lang='en')
                             | an extensive array of space and science-related displays. Admission has been free since the
                             | observatory's opening in 1935, in accordance with the will of Griffith J. Griffith, the benefactor
                             | after whom the observatory is named.
-                        a.btn.btn-primary(href='#') Details
-            .col-sm-4
+                        a.btn.btn-primary(href='/griffith-observatory') Details
+            .col-sm-3
                 .card
-                    img.card-img-top(src='image/alcatraz-logo.jpg', alt='Card image cap', width='100%', height='200')
+                    img.card-img-top(src='images/alcatraz-logo.jpg', alt='Card image cap', width='100%', height='200')
                     .card-block
                         h4.card-title Alcatraz
                         p.card-text
@@ -147,42 +159,61 @@ html(lang='en')
                             | National Recreation Area; it is open to tours. Visitors can reach the island by ferry ride from Pier 33,
                             | near Fisherman's Wharf, San Francisco. Hornblower Cruises and Events, operating under the
                             | name Alcatraz Cruises, is the official ferry provider to and from the island.
-                        a.btn.btn-primary(href='#') Details
+                        a.btn.btn-primary(href='/alcatraz') Details
+
         hr.featurette-divider
+
         .row.featurette
-            .col-md-8
-                h2.featurette-heading This is some features:
+            .col-md-1
+            .col-md-7
+                h2.featurette-heading Share your Travel Experiences
                 p
-                    | Sorry, we are still working on this part, you will see exciting info here very soon:
-            .col-md-4
-                img.featurette-image.img-fluid.mx-auto(src='', alt='placeholder image')
+                    | Have you visited a place, if yes then share your reviews about the places you visited. Help your fellow spartans!! Let them know how to plan the trip? What are the famous spots to visit? Where to eat? How to reach there?
+            .col-md-3
+                img.featurette-image.img-fluid.mx-auto(src='images/features1.jpg', alt='placeholder image')
+            .col-md-1
+
         hr.featurette-divider
+
         .row.featurette
-            .col-md-8.push-md-4
+            .col-md-1
+            .col-md-7.push-md-3
                 h2.featurette-heading
-                    | Feature two
-                    span.text-muted See for yourself.
-                p.lead Some random stuff.
-            .col-md-4.pull-md-8
-                img.featurette-image.img-fluid.mx-auto(src='', alt='placeholder image')
+                    | Share your memories
+                p.lead Can't describe the beauty in words! But want to share your experience? No worries, we have got it covered for you. Share the pcitures of places you want to visit. Let others know about the beauty they are yet to explore!
+            .col-md-3.pull-md-7
+                img.featurette-image.img-fluid.mx-auto(src='images/features2.png', alt='placeholder image')
+            .col-md-1
+
         hr.featurette-divider
+
         .row.featurette
-            .col-md-8
+            .col-md-1
+            .col-md-7
                 h2.featurette-heading
-                    | Last feature
-                    span.text-muted Something.
-                p.lead Just some random stuff.
-            .col-md-4
-                img.featurette-image.img-fluid.mx-auto(src='', alt='placeholder image')
+                    | Gather Information for your next trip
+                p.lead Planning to visit a new place, but so much information on the Internet confuses you. Take help of your fellow spartans. They have shared their experiences and reviews which will help you plan your next trip.
+            .col-md-3
+                img.featurette-image.img-fluid.mx-auto(src='images/features3.jpg', alt='placeholder image')
+            .col-md-1
+
         hr.featurette-divider
-        footer
-            p.float-right
-                a(href='#') Back to top
-            p.float-left
-                | © 2017 Team, 404. ·
-                a(href='#') Privacy
-                |  ·
-                a(href='#') Terms
+
+        // Footer
+        footer.footer.text-center
+            .container
+                ul.list-inline.mb-5
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white.mr-3(href='https://www.facebook.com')
+                            i.fa.fa-facebook(aria-hidden='true')
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white.mr-3(href='https://www.twitter.com')
+                            i.fa.fa-twitter(aria-hidden='true')
+                    li.list-inline-item
+                        a.social-link.rounded-circle.text-white(href='https://www.github.com')
+                            i.fa.fa-github(aria-hidden='true')
+                p.text-muted.small.mb-0 Copyright © Team 404
+
         // Bootstrap JavaScript
         script(src='https://code.jquery.com/jquery-3.1.1.slim.min.js', integrity='sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n', crossorigin='anonymous')
         script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')

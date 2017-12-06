@@ -1,114 +1,6 @@
-/* body {
-    font-family: Georgia, Times, serif;
-    font-size: 16px;
-    word-spacing: 3px;
+body {
+    font-family: Source Sans Pro;
 }
-
-.navbar_left {
-    overflow: hidden;
-    background-color: white;
-    position: absolute;
-    top: 4%;
-    right: calc(50% + 140px);
-    display: block;
-    margin-bottom: 10px;
-    word-spacing: 15px;
-}
-.navbar_left a {
-    font-size: 25px;
-    text-decoration: none;
-    color: #000;
-}
-
-.navbar_right {
-    overflow: hidden;
-    background-color: white;
-    position: absolute;
-    top: 4%;
-    left: calc(50% + 400px);
-    display: block;
-    margin-bottom: 10px;
-}
-.navbar_right a {
-    font-size: 25px;
-    text-decoration: none;
-    color: #000;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-hr {
-    margin-top: 80px;
-    width: 960px;
-}
-
-.searchBox {
-    margin: 30px auto 30px auto;
-    width: 940px;
-    height: 350px;
-    padding: 10px;
-    background-image: url(../image/city.jpg);
-    background-position: center;
-    text-align: center;
-}
-.searchForm {
-    margin: 150px;
-}
-input[type=text] {
-    width: 80%;
-    padding: 10px 20px;
-    margin: 10px;
-    display: inline-block;
-    border: 1px solid #f1f1f1;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-.searchForm #searchSubmit {
-    background-color: #ffffff;
-    border: 1px solid #f1f1f1;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0;
-    font-size: 16px;
-    padding: 8px;
-    text-transform: uppercase;
-    width: 50px;
-}
-
-p {
-    text-align: center;
-}
-h1 {
-    text-align: center;
-    border-top: 2px solid #cccccc;
-    border-bottom: 2px solid #cccccc;
-    padding: 20px;
-}
-
-.slides {
-    margin: 30px auto;
-    width: 960px;
-    padding: 10px;
-}
-.mySlides {
-    width: 960px;
-}
-
-#toTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    border-radius: 5px;
-    font-size: 20px;
-
-}
-
-#toTopBtn:hover {
-    background-color: #e9f2e1;
-}
-*/
 
 /* GLOBAL STYLES
 -------------------------------------------------- */
@@ -212,3 +104,63 @@ p.float-right {
 p.float-left {
     margin-left: 30px;
 }
+
+a {
+    color: #1D809F; }
+a:hover, a:focus, a:active {
+    color: #155d74; }
+
+footer.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem; }
+footer.footer .social-link {
+    display: block;
+    height: 4rem;
+    width: 4rem;
+    line-height: 4.3rem;
+    font-size: 1.5rem;
+    background-color: #1D809F;
+    transition: background-color 0.15s ease-in-out;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1); }
+footer.footer .social-link:hover {
+    background-color: #155d74;
+    text-decoration: none; }
+
+a {
+    color: #1D809F; }
+a:hover, a:focus, a:active {
+    color: #155d74; }
+
+.btn-primary {
+    background-color: #1D809F !important;
+    border-color: #1D809F !important;
+    color: #fff !important; }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #155d74 !important;
+    border-color: #155d74 !important; }
+
+.btn-secondary {
+    background-color: #ecb807 !important;
+    border-color: #ecb807 !important;
+    color: #fff !important; }
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #ba9106 !important;
+    border-color: #ba9106 !important; }
+
+.btn-dark {
+    color: #fff !important; }
+
+.btn {
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    font-weight: 700; }
+
+.bg-primary {
+    background-color: #1D809F !important; }
+
+.text-primary {
+    color: #1D809F !important; }
+
+.text-secondary {
+    color: #ecb807 !important; }
+
+
