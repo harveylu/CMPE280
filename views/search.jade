@@ -12,9 +12,14 @@ html(lang='en')
         // Bootstrap core CSS
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ', crossorigin='anonymous')
 
+        // jQuery ui CSS
+        link(rel='stylesheet', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
+        script(src='https://code.jquery.com/jquery-1.12.4.js')
+        script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
         // Custom CSS
         link(href='stylesheets/test.css', rel='stylesheet')
 
+        // Autocomplete funciton
         script.
             $(function () {
                 var availableTags = [
@@ -44,6 +49,20 @@ html(lang='en')
 
     body#page-top
 
+        nav.navbar.navbar-toggleable-md.navbar-light.fixed-top.bg-faded
+            button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            a.navbar-brand(href='/')
+                img.img-fluid(src='images/qIXtA.png', height='30px', width='30px')
+            #navbarCollapse.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') Home
+                    li.nav-item
+                        a.nav-link(href='about') About
+                    li.nav-item
+                        a.nav-link(href='contact') Contact
+
         .container
             .row.justify-content-center
                 .col-10
@@ -63,7 +82,7 @@ html(lang='en')
                     p.lead
                         strong.text-danger #{results.length}
                         |  results were found for the search
-                        strong.text-danger &nbsp #{keyWord}
+                        strong.text-danger &nbsp "#{keyWord}"
 
 
                     hr
